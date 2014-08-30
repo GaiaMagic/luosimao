@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Luosimao::VERSION
   spec.authors       = ["Villins"]
   spec.email         = ["linshao512@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
+  spec.summary       = %q{ a warpper of luosimao send message }
   spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
