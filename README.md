@@ -19,9 +19,16 @@ Or install it yourself as:
     $ gem install luosimao
 
 ## Usage
-
-TODO: Write usage instructions here
-
+### Config
+```ruby
+Luosimao.username = "danche"
+Luosimao.key      = "dianying"
+Luosimao.brand    = "【单车电影】"
+```
+### Send message
+```ruby
+Luosimao::Message.to "10086", "hello world!"
+```
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/luosimao/fork )
