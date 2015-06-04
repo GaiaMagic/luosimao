@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'luosimao/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "luosimao"
+  spec.name          = "gm-luosimao"
   spec.version       = Luosimao::VERSION
-  spec.authors       = ["Villins"]
-  spec.email         = ["linshao512@gmail.com"]
+  spec.authors       = ["HungYuHei"]
+  spec.email         = ["kongruxi@gmail.com"]
   spec.summary       = %q{ a warpper of luosimao send message }
-  spec.description   = %q{  a warpper of luosimao send message}
-  spec.homepage      = ""
+  spec.description   = %q{ a warpper of luosimao send message }
+  spec.homepage      = "https://github.com/GaiaMagic/luosimao"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

@@ -7,7 +7,7 @@ TODO: Write a gem description
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'luosimao'
+gem 'gm-luosimao'
 ```
 
 And then execute:
@@ -16,14 +16,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install luosimao
+    $ gem install gm-luosimao
 
 ## Usage
 ### Config
 ```ruby
-Luosimao.username = "danche"
-Luosimao.key      = "dianying"
-Luosimao.brand    = "【单车电影】"
+Luosimao.username = "yyc"
+Luosimao.key      = "api-key"
+Luosimao.brand    = "【有演出】"
 ```
 ### Send message
 ```ruby
