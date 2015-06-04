@@ -1,4 +1,3 @@
-# coding: utf-8
 require 'json'
 require 'uri'
 require 'net/http'
@@ -8,16 +7,25 @@ module Luosimao
     SEND_URL = "https://sms-api.luosimao.com/v1/send.json"
     DEPOSIT_URL = "https://sms-api.luosimao.com/v1/status.json"
 
+    class RequestException < StandardError; end
+
     def self.to(phone, content)
       url = URI.parse SEND_URL
       post = Net::HTTP::Post.new(url.path)
-      post.basic_auth(Luosimao.username, Luosimao.key)
-      post.set_form_data({mobile: phone, message: "#{content}#{Luosimao.brand}"})
+      post.basic_auth(Luosimao.username, "key-#{Luosimao.key}")
+      post.set_form_data(mobile: phone, message: "#{content} #{Luosimao.brand}")
 
       https = Net::HTTP.new(url.host, url.port)
       https.use_ssl = true
+      https.read_timeout = 5
+      https.open_timeout = 5
       response = https.start {|socket| socket.request(post)}
       JSON.parse response.body
+    end
+
+    def self.to!(phone, content)
+      json = to(phone, content)
+      json['error'] == 0 || raise(RequestException.new(json))
     end
 
     def self.deposit_check
