@@ -27,7 +27,8 @@ Luosimao.brand    = "【有演出】"
 ```
 ### Send message
 ```ruby
-Luosimao::Message.to "10086", "hello world!"
+Luosimao::Message.to("10086", "hello world!")
+# Luosimao.send_to(%w(10086 10010), "hello world!")
 ```
 ## Contributing
 

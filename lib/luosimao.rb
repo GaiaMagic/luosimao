@@ -6,12 +6,12 @@ module Luosimao
     attr_accessor :username, :key, :brand
   end
 
-  def self.send_to(phone, content)
-    Message.to(phone, content)
+  def self.send_to(phones, content)
+    Array(phones).each { |phone| Message.to(phone, content) }
   end
 
-  def self.send_to!(phone, content)
-    Message.to!(phone, content)
+  def self.send_to!(phones, content)
+    Array(phones).each { |phone| Message.to!(phone, content) }
   end
 
   def self.deposit_check
